@@ -7,6 +7,8 @@ import (
 	"os"
 	"strings"
 	"testing"
+
+	"github.com/dattaray-basab/go-testing/prime"
 )
 
 func Test_isPrime(t *testing.T) {
@@ -24,7 +26,7 @@ func Test_isPrime(t *testing.T) {
 	}
 
 	for _, e := range primeTests {
-		result, msg := isPrime(e.testNum)
+		result, msg := prime.IsPrime(e.testNum)
 		if e.expected && !result {
 			t.Errorf("%s: expected true but got false", e.name)
 		}
